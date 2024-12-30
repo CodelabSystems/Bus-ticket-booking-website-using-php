@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2024 at 01:57 PM
+-- Generation Time: Dec 30, 2024 at 01:09 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -66,9 +66,7 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`bk_id`, `bk_date`, `c_id`, `t_id`, `bk_name`, `bk_phone`, `bk_email`, `bk_total_fair`, `bk_transaction_id`, `bk_payment_status`, `bk_status`) VALUES
-(1, '2024-09-19', 1, 2, 'Rahul', '09876543210', 'rahul@gmail.com', '1000', '9876543210', 'Paid', 'Booked'),
-(2, '2024-09-19', 1, 2, 'John', '09876543210', 'john@gail.com', '500', '9876543210', 'Paid', 'Booked'),
-(3, '2024-09-19', 1, 1, 'Arjun', '9876543210', 'arjun@gmail.com', '1020', '9876543210', 'Paid', 'Booked');
+(6, '2024-10-03', 2, 4, 'Rahul', '9876543210', 'rahul@gmail.com', '750', '88333516739219', 'Paid', 'Booked');
 
 -- --------------------------------------------------------
 
@@ -118,7 +116,9 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`cn_id`, `cn_date`, `cn_name`, `cn_phone`, `cn_email`, `cn_subject`, `cn_message`) VALUES
-(2, '2024-09-19', 'Rahul', '09876543210', 'rahul@gmail.com', 'Bus Availability ', 'Bus availability is less. Upload more trips');
+(2, '2024-09-19', 'Rahul', '09876543210', 'rahul@gmail.com', 'Bus Availability ', 'Bus availability is less. Upload more trips'),
+(3, '2024-10-01', 'Rahul', '9876543210', 'rahul@gmail.com', 'very good services', 'thank you for your service'),
+(4, '2024-10-03', 'Rahul', '9876543210', 'rahul@gmail.com', 'Good and satisfied with the service', 'Thank you for your service');
 
 -- --------------------------------------------------------
 
@@ -140,7 +140,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`c_id`, `c_username`, `c_email`, `c_password`, `c_added_date`, `c_status`) VALUES
-(1, 'name', 'email@gmail.com', '12345', '2024-09-17', 'Active');
+(2, 'Rahul', 'rahul@gmail.com', '12345', '2024-10-01', 'Active');
 
 -- --------------------------------------------------------
 
@@ -164,11 +164,7 @@ CREATE TABLE `passenger` (
 --
 
 INSERT INTO `passenger` (`ps_id`, `ps_name`, `ps_age`, `ps_gender`, `bk_id`, `s_id`, `ps_ticket`, `ps_status`) VALUES
-(1, 'Rahul', '22', 'Male', 1, 70, 'TCKT17267371483002', 'confirmed'),
-(2, 'Raghu', '23', 'Male', 1, 75, 'TCKT17267371483807', 'confirmed'),
-(3, 'John', '24', 'Male', 2, 81, 'TCKT17267375377479', 'confirmed'),
-(4, 'Arjun', '23', 'Male', 3, 78, 'TCKT17267414563087', 'confirmed'),
-(5, 'John', '23', 'Male', 3, 79, 'TCKT17267414565799', 'confirmed');
+(9, 'Rahul', '23', 'Male', 6, 13, 'TCKT17279360359120', 'confirmed');
 
 -- --------------------------------------------------------
 
@@ -202,8 +198,8 @@ INSERT INTO `seats` (`s_id`, `b_id`, `s_number`, `s_booked_for`, `s_added_date`,
 (10, 1, 'L10', '', '2024-09-18', 'Available'),
 (11, 1, 'L11', '', '2024-09-18', 'Available'),
 (12, 1, 'L12', '', '2024-09-18', 'Available'),
-(13, 1, 'L13', '', '2024-09-18', 'Available\n'),
-(14, 1, 'L14', '', '2024-09-18', 'Available'),
+(13, 1, 'L13', 'Male', '2024-09-18', 'Booked'),
+(14, 1, 'L14', 'Male', '2024-09-18', 'Booked'),
 (15, 1, 'L15', '', '2024-09-18', 'Available'),
 (16, 1, 'L16', '', '2024-09-18', 'Available'),
 (17, 1, 'L17', '', '2024-09-18', 'Available'),
@@ -217,7 +213,7 @@ INSERT INTO `seats` (`s_id`, `b_id`, `s_number`, `s_booked_for`, `s_added_date`,
 (25, 1, 'U8', '', '2024-09-18', 'Available'),
 (26, 1, 'U9', '', '2024-09-18', 'Available'),
 (27, 1, 'U10', '', '2024-09-18', 'Available'),
-(28, 1, 'U11', '', '2024-09-18', 'Available'),
+(28, 1, 'U11', 'Male', '2024-09-18', 'Booked'),
 (29, 1, 'U12', '', '2024-09-18', 'Available'),
 (30, 1, 'U13', '', '2024-09-18', 'Available'),
 (31, 1, 'U14', '', '2024-09-18', 'Available'),
@@ -259,18 +255,18 @@ INSERT INTO `seats` (`s_id`, `b_id`, `s_number`, `s_booked_for`, `s_added_date`,
 (67, 2, 'U16', '', '2024-09-18', 'Available'),
 (68, 2, 'U17', '', '2024-09-18', 'Available'),
 (69, 3, 'L1', '', '2024-09-18', 'Available'),
-(70, 3, 'L2', 'Male', '2024-09-18', 'Booked'),
+(70, 3, 'L2', '', '2024-09-18', 'Available'),
 (71, 3, 'L3', '', '2024-09-18', 'Available'),
 (72, 3, 'L4', '', '2024-09-18', 'Available'),
 (73, 3, 'L5', '', '2024-09-18', 'Available'),
 (74, 3, 'L6', '', '2024-09-18', 'Available'),
-(75, 3, 'L7', 'Male', '2024-09-18', 'Booked'),
+(75, 3, 'L7', '', '2024-09-18', 'Available'),
 (76, 3, 'L8', '', '2024-09-18', 'Available'),
 (77, 3, 'L9', '', '2024-09-18', 'Available'),
-(78, 3, 'L10', 'Male', '2024-09-18', 'Booked'),
-(79, 3, 'L11', 'Male', '2024-09-18', 'Booked'),
+(78, 3, 'L10', '', '2024-09-18', 'Available'),
+(79, 3, 'L11', '', '2024-09-18', 'Available'),
 (80, 3, 'L12', '', '2024-09-18', 'Available'),
-(81, 3, 'L13', 'Male', '2024-09-18', 'Booked'),
+(81, 3, 'L13', '', '2024-09-18', 'Available'),
 (82, 3, 'L14', '', '2024-09-18', 'Available'),
 (83, 3, 'L15', '', '2024-09-18', 'Available'),
 (84, 3, 'L16', '', '2024-09-18', 'Available'),
@@ -317,11 +313,12 @@ CREATE TABLE `trip` (
 --
 
 INSERT INTO `trip` (`t_id`, `t_date`, `b_id`, `t_from`, `t_to`, `t_root`, `t_duration`, `t_ticket`, `t_added_date`, `t_status`) VALUES
-(1, '2024-09-21 20:30:00', 3, 'Mangalore', 'Bangalore', 'Mysuru', '12', '510', '2024-09-18', 'Scheduled'),
-(2, '2024-09-22 20:30:00', 3, 'Bangalore', 'Mangalore', 'Mysuru', '9', '500', '2024-09-18', 'Scheduled'),
+(1, '2024-10-03 00:00:00', 3, 'Mangalore', 'Bangalore', 'Mysuru', '12', '510', '2024-09-18', 'Completed'),
+(2, '2025-01-01 20:30:00', 3, 'Bangalore', 'Mangalore', 'Mysuru', '9', '500', '2024-09-18', 'Scheduled'),
 (3, '2024-09-19 18:00:00', 2, 'Chennai', 'Bangalore', 'Ooty', '13', '700', '2024-09-18', 'Completed'),
-(4, '2024-09-21 18:00:00', 1, 'Mangalore', 'Bangalore', 'Mysuru', '13', '750', '2024-09-18', 'Scheduled'),
-(5, '2024-09-22 16:04:00', 1, 'Bangalore', 'Mangalore', 'Hassan', '11', '700', '2024-09-18', 'Scheduled');
+(4, '2025-01-10 18:00:00', 1, 'Mangalore', 'Bangalore', 'Mysuru', '13', '750', '2024-09-18', 'Completed'),
+(5, '2025-01-01 00:00:00', 2, 'Bangalore', 'Mangalore', 'Hassan', '11', '700', '2024-09-18', 'Completed'),
+(6, '2025-01-01 16:00:00', 1, 'Mangalore', 'Bangalore', 'Hassab', '9', '600', '2024-12-30', 'Completed');
 
 --
 -- Indexes for dumped tables
@@ -389,7 +386,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `bk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `bk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `bus`
@@ -401,19 +398,19 @@ ALTER TABLE `bus`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `cn_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cn_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `passenger`
 --
 ALTER TABLE `passenger`
-  MODIFY `ps_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ps_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `seats`
@@ -425,7 +422,7 @@ ALTER TABLE `seats`
 -- AUTO_INCREMENT for table `trip`
 --
 ALTER TABLE `trip`
-  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
